@@ -103,6 +103,7 @@ alias cp="cp -i"
 set -o noclobber
 
 # 2.2) Listing, directories, and motion
+# some aiiases don't work on OSX
 alias ll="ls -alrtF --color"
 alias la="ls -A"
 alias l="ls -CF"
@@ -119,8 +120,8 @@ alias treeacl='tree -A -C -L 2'
 # 2.3) Text and editor commands
 alias em='emacs -nw'     # No X11 windows
 alias eqq='emacs -nw -Q' # No config and no X11
-export EDITOR='emacs -nw'
-export VISUAL='emacs -nw' 
+export EDITOR=`which vim`
+export VISUAL=`which vim`
 
 # 2.4) grep options
 export GREP_OPTIONS='--color=auto'
