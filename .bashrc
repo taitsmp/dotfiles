@@ -86,7 +86,7 @@ if [ -f ~/.bash_prompt ]; then
 fi
 
 #on the mac PROMPT command has a trailing ';'
-export HISTTIMEFORMAT="%D%t%T%t%s "
+export HISTTIMEFORMAT="%D%t%T%t%s%t"
 PROMPT_COMMAND="${PROMPT_COMMAND:+${PROMPT_COMMAND%; } ; }"'echo $$ $USER \
                "$(history 1)" >> ~/.bash_eternal_history'
 
