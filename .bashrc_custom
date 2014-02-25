@@ -2,8 +2,9 @@
 alias hosts='sudo vi /etc/hosts'
 alias shorts='cat ~/.ssh/config | grep Host | grep -vi HostName'
 alias sconf='less ~/.ssh/config'
-alias bet='less ~/.bash_eternal_history'
-alias slast='tail -r ~/.bash_eternal_history | grep scp | head -n1' #TODO:make this better. cut out column. should start with scp. 
+alias beh='less ~/.bash_eternal_history'
+alias slast='tail -r ~/.bash_eternal_history | grep scp | head -n1  | cut -f 4'
+alias tagsmp='cd ~/smp_blog; ctags -R --fields=+aimS --languages=php ; cd -'
 
 grepfind () { find . -type f -name "$2" -print0 | xargs -0 grep "$1" ; }
 fphp() { grepfind $1 \*.php ; }
