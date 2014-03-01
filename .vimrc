@@ -1,7 +1,7 @@
 syntax on
 set tags=./tags,tags;
 set autochdir
-set path=.,~/smp_blog,,
+set path=.,~/smp_blog/htdocs,~/smp_blog/htdocs/**,,
 execute pathogen#infect()
 set hidden
 
