@@ -1,6 +1,7 @@
 syntax on
 set tags=./tags,tags;
-set autochdir
+"autochdir seems to mess with grep.  Use :find to find the files you want.  always open vim in root area. 
+"set autochdir
 set path=.,~/smp_blog/htdocs,~/smp_blog/htdocs/**,,
 execute pathogen#infect()
 set hidden
@@ -15,3 +16,14 @@ nnoremap <silent> ]b :bnext
 nnoremap <silent> [B :bfirst 
 nnoremap <silent> ]B :blast
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
