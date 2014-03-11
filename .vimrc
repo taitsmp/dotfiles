@@ -16,6 +16,7 @@ nnoremap <silent> ]b :bnext
 nnoremap <silent> [B :bfirst 
 nnoremap <silent> ]B :blast
 
+" http://robots.thoughtbot.com/faster-grepping-in-vim
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
