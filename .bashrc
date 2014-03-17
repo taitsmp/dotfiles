@@ -92,6 +92,10 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+${PROMPT_COMMAND%; } ; }"'echo $$ $USER \
 
 #wrap good after resize
 shopt -s checkwinsize
+
+#extended globbing in bash. 
+shopt -s extglob
+
 ## -----------------------
 ## -- 2) Set up aliases --
 ## -----------------------
