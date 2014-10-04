@@ -109,7 +109,7 @@ set -o noclobber
 # 2.2) Listing, directories, and motion
 # some aiiases don't work on OSX
 alias ll="ls -alrtF --color"
-alias la="ls -A"
+alias la="ls -A --color"
 alias l="ls -CF"
 alias dir='ls --color=auto --format=vertical'
 alias vdir='ls --color=auto --format=long'
