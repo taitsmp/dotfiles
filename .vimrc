@@ -39,3 +39,36 @@ set statusline+=%*
 
 
 let g:syntastic_javascript_checkers = ['jsxhint']
+
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
+
+if executable('cabal')
+
+  map <silent> <Leader>e :Errors<CR>
+  map <Leader>s :SyntasticToggleMode<CR>
+  let g:syntastic_auto_loc_list=1
+
+  "--haskellmode-vim
+  au BufEnter *.hs compiler ghc
+
+  "-- ghc-mod -- 
+  " Reload
+  map <silent> tu :call GHC_BrowseAll()<CR>
+  " Type Lookup
+  map <silent> tw :call GHC_ShowType(1)<CR>
+
+  "--not sure this is working.
+	"--tagbar
+  nmap <leader>= :TagbarToggle<CR>
+  let g:tagbar_autofocus = 1
+
+	"-- hdevtools --
+  au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+  au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+  au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>  
+endif
+
+if executable('pointfree')
+  "autocmd BufEnter *.hs set formatprg=pointfree
+endif
