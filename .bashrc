@@ -107,12 +107,20 @@ alias cp="cp -i"
 set -o noclobber
 
 # 2.2) Listing, directories, and motion
-# some aiiases don't work on OSX
-alias ll="ls -alrtF --color"
-alias la="ls -A --color"
 alias l="ls -CF"
-alias dir='ls --color=auto --format=vertical'
-alias vdir='ls --color=auto --format=long'
+if [[ $OSTYPE == darwin* ]]; then
+
+  alias ll="ls -alrtFG"
+  alias la="ls -AG"
+  alias dir='lsG --format=vertical'
+  alias vdir='lsG --format=long'
+else
+  alias ll="ls -alrtF --color"
+  alias la="ls -A --color"
+  alias dir='ls --color=auto --format=vertical'
+  alias vdir='ls --color=auto --format=long'
+fi
+
 alias m='less'
 alias ..='cd ..'
 alias ...='cd ..;cd ..'
