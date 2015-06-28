@@ -6,6 +6,8 @@ set path=.,~/smp_blog/htdocs,~/smp_blog/htdocs/**,,
 execute pathogen#infect()
 set hidden
 
+set fileencodings=utf-8
+
 "tab = 2 spaces
 set shiftwidth=2
 set tabstop=2
@@ -38,7 +40,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
