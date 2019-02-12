@@ -169,3 +169,4 @@ fi
 if [ -f ~/.bashrc_custom ]; then
    source ~/.bashrc_custom
 fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
