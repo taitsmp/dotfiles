@@ -6,6 +6,11 @@ alias beh='less ~/.bash_eternal_history'
 alias slast='tail -r ~/.bash_eternal_history | grep scp | head -n1  | cut -f 4'
 alias tagsmp='cd ~/smp_blog; git ctags; cd -'
 
+alias dclb='docker-compose logs -f blog'
+alias dclp='docker-compose logs -f proxy'
+alias dclr='docker-compose logs -f react-frontend'
+alias dcu='docker-compose up -d --build --force-recreate'
+
 grepfind () { find . -type f -name "$2" -print0 | xargs -0 grep "$1" ; }
 fphp() { grepfind $1 \*.php ; }
 fjs() { grepfind $1 \*.js ; }
@@ -24,4 +29,5 @@ export PATH=$HOME/.rvm/bin:$PATH
 export PATH=/usr/local/git/bin:$PATH
 #nim
 export PATH=/opt/nim/bin:$PATH
+
 
