@@ -139,11 +139,16 @@ export VISUAL=`which vim`
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;31' # green for matches
 
-# 2.5) sort options
+# 2.5) sort options / cocoapods on iOS
 # Ensures cross-platform sorting behavior of GNU sort.
 # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
-unset LANG
-export LC_ALL=POSIX
+#unset LANG
+#export LC_ALL=POSIX
+# -----------------
+# Ensures cocoapods works - https://github.com/CocoaPods/CocoaPods/issues/6333
+export LC_ALL="en_US.UTF-8"
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 
 # 2.6) Install rlwrap if not present
 # http://stackoverflow.com/a/677212
@@ -157,7 +162,7 @@ export NODE_DISABLE_COLORS=1
 if [ -s ~/.nvm/nvm.sh ]; then
     NVM_DIR=~/.nvm
     source ~/.nvm/nvm.sh
-    nvm use v0.10.12 &> /dev/null # silence nvm use; needed for rsync
+    nvm use v10 &> /dev/null # silence nvm use; needed for rsync
 fi
 
 ## ------------------------------
